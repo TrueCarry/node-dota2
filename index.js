@@ -92,7 +92,18 @@ Dota2Client.prototype.launch = function() {
   this.Party = null;
   this.Lobby = null;
   this.PartyInvite = null;
-  this._client.gamesPlayed([this._appid]);
+  this._client.gamesPlayed({
+    games_played: [
+      {
+        game_id: 730,
+        game_flags: 1
+      },
+      {
+        game_id: 570,
+        game_flags: 1
+      }
+    ]
+  });
 
   // Keep knocking on the GCs door until it accepts us.
   // This is very bad practice and quite trackable.
